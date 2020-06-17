@@ -2,11 +2,6 @@
 
 load ./tmc/point.sh
 
-function setup() {
-  EXERCISE_PATH=`find ./ -name "src"`
-  cd $EXERCISE_PATH
-}
-
 
 @test "addition using bc" {
   @point "1.1"
@@ -29,13 +24,13 @@ function setup() {
 @test "the shell script to be tested is existed" {
   @point "1.3"
   msg "File sum.sh does not exist."
-  [ -f "sum.sh" ]
+  [ -f "./src/sum.sh" ]
 }
 
 
 @test "sum function" {
   @point "1.4"
-  run ./sum.sh 1 2 6 8
+  run ./src/sum.sh 1 2 6 8
 
   msg "Wrong status"
   [ "$status" -eq 0 ]

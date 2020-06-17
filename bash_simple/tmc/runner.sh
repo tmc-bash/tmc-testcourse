@@ -1,4 +1,4 @@
-#/usr/bin/env bats
+#!/bin/bash
 
 . ./tmc/utils.sh
 

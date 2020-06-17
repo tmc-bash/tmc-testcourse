@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEMP_RESULTS_FILE="../temp_results.txt"
+TEMP_RESULTS_FILE="temp_results.txt"
 
 
 @point() {
