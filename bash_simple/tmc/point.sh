@@ -1,7 +1,12 @@
 #!/bin/bash
 
-TEMP_POINTS_FILE="../temp_points.txt"
+TEMP_RESULTS_FILE="../temp_results.txt"
+
 
 @point() {
-    echo $1 >> $TEMP_POINTS_FILE
+    printf "\npoint:$1, " >> $TEMP_RESULTS_FILE
+}
+
+msg() {
+    printf "msg:$1, result:" >> $TEMP_RESULTS_FILE
 }

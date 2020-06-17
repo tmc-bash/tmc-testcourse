@@ -32,7 +32,7 @@ do
 
     sed -i "s/}/$punc\"$var\"}/" $AVAILABLE_POINTS
   else
-    sed -i "s/}/:\"$var\"}/" $AVAILABLE_POINTS
+    sed -i "s/}/:[\"$var\"]}/" $AVAILABLE_POINTS
   fi
 
   count=$(($count+1))
