@@ -25,14 +25,14 @@ do
   var=$(echo $line | cut -d'"' -f 2)
 
   if [ $(($count % 2)) == 0 ]; then
-
     if grep -q "\"" "$AVAILABLE_POINTS"; then
       punc=","
     fi
-
+    
     sed -i "s/}/$punc\"$var\"}/" $AVAILABLE_POINTS
+
   else
-    sed -i "s/}/:[\"$var\"]}/" $AVAILABLE_POINTS
+    sed -i "s/}/:\"$var\"}/" $AVAILABLE_POINTS
   fi
 
   count=$(($count+1))

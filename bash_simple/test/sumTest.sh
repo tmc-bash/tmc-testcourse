@@ -8,7 +8,7 @@ load ./tmc/point.sh
   result="$(echo 2+2 | bc)"
 
   msg "Wrong addition 1. Expected 2 but was $result."
-  [ "$result" -eq 2 ]
+  [ "$result" -eq 4 ]
 }
 
 
@@ -30,12 +30,12 @@ load ./tmc/point.sh
 
 @test "sum function" {
   @point "1.4"
-  run ./src/sum.sh 1 2 6 8
+  run ./src/sum.sh 1 2 4
 
-  msg "Wrong status"
+  msg "Wrong status. Expected 0 but was $status"
   [ "$status" -eq 0 ]
   
-  msg "Wrong sum"
-  [ "$output" = "Sum is 17." ]
+  msg "Wrong return value. Expected 'Sum is 7.', but was '$output'."
+  [ "$output" = "Sum is 7." ]
   
 }
